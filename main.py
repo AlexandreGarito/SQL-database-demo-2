@@ -97,4 +97,6 @@ logging.info("Data upload to database done")
 
 
 # Close the connection the GCP database
+logging.info("Closing connection to database...")
 close_conn_to_sql(pool, connector)
+logging.info("Connection to database closed.")
