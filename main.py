@@ -25,7 +25,7 @@ from sql_queries_vars import (
     create_table_glassdoor_wvp,
     create_table_glassdoor_wvv,
 )
-from gcp_interactions import conn_to_psql
+from gcp_interactions import conn_to_psql, close_conn_to_sql
 
 logging.basicConfig(
         # filename="logs/app.log",
@@ -94,3 +94,7 @@ df_bc.to_sql("glassdoor_benefits_comments", pool, if_exists="replace", index=Fal
 df_bh.to_sql("glassdoor_benefits_highlights", pool, if_exists="replace", index=False)
 df_glassdoor.to_sql("glassdoor", pool, if_exists="replace", index=False)
 logging.info("Data upload to database done")
+
+
+# Close the connection the GCP database
+close_conn_to_sql(pool, connector)
