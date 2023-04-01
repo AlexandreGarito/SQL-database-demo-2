@@ -126,7 +126,7 @@ create_table_glassdoor_r = '''
         reviews_val_title VARCHAR,
         reviews_val_adviceToManagement VARCHAR,
         reviews_val_companyResponse VARCHAR,
-        reviews_val_reviewResponses INTEGER
+        FOREIGN KEY (reviews_val_reviewResponses) REFERENCES glassdoor_reviews_val_reviewResponses(id),
     );
     '''
 
@@ -168,13 +168,13 @@ create_table_glassdoor_w = '''
     CREATE TABLE glassdoor_wwfu (
         id INTEGER PRIMARY KEY,
         index INTEGER,
-        wwf_val_body VARCHAR,
-        wwf_val_id INTEGER,
-        wwf_val_title VARCHAR,
-        wwf_val_type VARCHAR,
-        FOREIGN KEY (wwf_val_videos) INTEGER,
-        wwf_val_photos INTEGER,
-        wwf_val_captions INTEGER
+        wwfu_val_body VARCHAR,
+        wwfu_val_id INTEGER,
+        wwfu_val_title VARCHAR,
+        wwfu_val_type VARCHAR,
+        FOREIGN KEY (wwfu_val_videos) REFERENCES glassdoor_wwfu_val_videos(id),
+        FOREIGN KEY (wwfu_val_photos) REFERENCES glassdoor_wwfu_val_photos(id),
+        FOREIGN KEY (wwfu_val_captions) REFERENCES glassdoor_wwfu_val_captions(id)
     );
     '''
 
@@ -207,3 +207,39 @@ create_table_glassdoor_wvv = '''
         wwfuf_val_videos_val VARCHAR
     );
     '''
+
+
+query_verify_glassdoor = """
+SELECT * FROM glassdoor
+LIMIT 10;
+"""
+
+
+query_verify_bh = """
+SELECT * FROM glassdoor_benefits_highlights
+LIMIT 10;
+"""
+
+
+query_verify_r = """
+SELECT * FROM glassdoor_reviews
+LIMIT 10;
+"""
+
+
+query_verify_w = """
+SELECT * FROM glassdoor_wwfu
+LIMIT 10;
+"""
+
+
+query_verify_wvv = """
+SELECT * FROM glassdoor_wwfu_val_videos
+LIMIT 10;
+"""
+
+
+query_verify_wvc = """
+SELECT * FROM glassdoor_wwfu_val_captions
+LIMIT 10;
+"""
