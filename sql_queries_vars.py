@@ -1,4 +1,6 @@
-
+""" This module stores all the SQL queries related to the main script.
+    Those queries can be quite long so they are put here to save viewing space elsewhere and facilitate code readability.
+"""
 
 
 
