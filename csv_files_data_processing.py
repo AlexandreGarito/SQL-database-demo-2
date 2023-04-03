@@ -36,7 +36,7 @@ def clean_job_description(text):
 
 def data_processing_glassdoor_csv():
     """Filter, clean and validate the glassdoor.csv file, the main file/table of the dataset."""
-        
+    
     df_glassdoor = pd.read_csv("glassdoor_dataset/glassdoor.csv")
 
     df_glassdoor = replace_dots(df_glassdoor)
@@ -149,6 +149,14 @@ def data_processing_glassdoor_csv():
     # Removes all the HTML/CSS tags and other random junk from the text, only keeping words
     filtered_df_glassdoor["job_description"] = filtered_df_glassdoor["job_description"].apply(clean_job_description)
 
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    filtered_df_glassdoor = filtered_df_glassdoor.rename(columns=lambda x: x.lower())
+
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(filtered_df_glassdoor) // 100
+    filtered_df_glassdoor = filtered_df_glassdoor.iloc[:new_length] """
+
     return filtered_df_glassdoor
 
 
@@ -158,6 +166,16 @@ def data_processing_glassdoor_overview_competitors_csv():
 
     df_oc = replace_dots(df_oc)
     
+    df_oc = df_oc.drop_duplicates(subset='id', keep='first')
+    
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_oc = df_oc.rename(columns=lambda x: x.lower())
+    
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_oc) // 100
+    df_oc = df_oc.iloc[:new_length] """
+    
     return df_oc
 
 
@@ -166,6 +184,9 @@ def data_processing_glassdoor_benefits_comments_csv():
     df_bc = pd.read_csv("glassdoor_dataset/glassdoor_benefits_comments.csv")
 
     df_bc = replace_dots(df_bc)
+    
+    df_bc = df_bc.drop_duplicates(subset='id', keep='first')
+    
 
     # Transform floats with zero decimal values to integers
     columns_to_int = [
@@ -175,6 +196,14 @@ def data_processing_glassdoor_benefits_comments_csv():
     for column in columns_to_int:
         df_bc[column] = df_bc[column].astype(pd.Int64Dtype())
     
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_bc = df_bc.rename(columns=lambda x: x.lower())
+    
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_bc) // 100
+    df_bc = df_bc.iloc[:new_length] """
+    
     return df_bc
 
 
@@ -183,7 +212,9 @@ def data_processing_glassdoor_benefits_highlights_csv():
     df_bh = pd.read_csv("glassdoor_dataset/glassdoor_benefits_highlights.csv")
 
     df_bh = replace_dots(df_bh)
-
+    
+    df_bh = df_bh.drop_duplicates(subset='id', keep='first')
+    
     # Transform floats with zero decimal values to integers
     columns_to_int = [
         "index",
@@ -192,13 +223,25 @@ def data_processing_glassdoor_benefits_highlights_csv():
     for column in columns_to_int:
         df_bh[column] = df_bh[column].astype(pd.Int64Dtype())
 
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_bh = df_bh.rename(columns=lambda x: x.lower())
+
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_bh) // 100
+    df_bh = df_bh.iloc[:new_length] """
+    
     return df_bh
+
 
 def data_processing_glassdoor_reviews_csv():
 
     df_r = pd.read_csv("glassdoor_dataset/glassdoor_reviews.csv")
 
     df_r = replace_dots(df_r)
+    
+    df_r = df_r.drop_duplicates(subset='id', keep='first')
+    
 
     # Transform floats with zero decimal values to integers
     # I found that in some columns, some rare values actually contain decimals (3.5/5 rating for example), I chose to keep those columns as floats
@@ -219,20 +262,19 @@ def data_processing_glassdoor_reviews_csv():
     ]
     for column in columns_to_int:
         df_r[column] = df_r[column].astype(pd.Int64Dtype())
+
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_r = df_r.rename(columns=lambda x: x.lower())
+
+    temp_value = -1
+    df_r['reviews_val_reviewresponses'].fillna(temp_value, inplace=True)
+
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_r) // 100
+    df_r = df_r.iloc[:new_length] """
     
     return df_r
-
-
-def data_processing_glassdoor_reviews_val_reviewResponses_csv():
-
-    df_rvr = pd.read_csv("glassdoor_dataset/glassdoor_reviews_val_reviewResponses.csv")
-
-    df_rvr = replace_dots(df_rvr)
-
-    # # Cleaning HTML/CSS tags
-    df_rvr["reviews_val_reviewResponses_val_responseText"] = df_rvr["reviews_val_reviewResponses_val_responseText"].apply(clean_job_description)
-
-    return df_rvr
 
 
 def data_processing_glassdoor_salary_salaries_csv():
@@ -241,6 +283,8 @@ def data_processing_glassdoor_salary_salaries_csv():
 
     df_ss = replace_dots(df_ss)
 
+    df_ss = df_ss.drop_duplicates(subset='id', keep='first')
+    
     # Transform floats with zero decimal values to integers
     columns_to_int = [
         "index",
@@ -248,6 +292,14 @@ def data_processing_glassdoor_salary_salaries_csv():
     ]
     for column in columns_to_int:
         df_ss[column] = df_ss[column].astype(pd.Int64Dtype())
+    
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_ss = df_ss.rename(columns=lambda x: x.lower())
+    
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_ss) // 100
+    df_ss = df_ss.iloc[:new_length] """
     
     return df_ss
 
@@ -257,6 +309,9 @@ def data_processing_glassdoor_wwfu_csv():
     df_w = pd.read_csv("glassdoor_dataset/glassdoor_wwfu.csv")
 
     df_w = replace_dots(df_w)
+    
+    df_w = df_w.drop_duplicates(subset='id', keep='first')
+    
 
     # Transform floats with zero decimal values to integers
     columns_to_int = [
@@ -269,9 +324,17 @@ def data_processing_glassdoor_wwfu_csv():
 
     # Cleaning HTML/CSS tags
     df_w["wwfu_val_body"] = df_w["wwfu_val_body"].apply(clean_job_description)
+
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_w = df_w.rename(columns=lambda x: x.lower())
+
+    
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_w) // 100
+    df_w = df_w.iloc[:new_length] """
     
     return df_w
-
 
 
 def data_processing_glassdoor_wwfu_val_captions_csv():
@@ -280,8 +343,17 @@ def data_processing_glassdoor_wwfu_val_captions_csv():
     
     df_wvc = replace_dots(df_wvc)
     
+    df_wvc = df_wvc.drop_duplicates(subset='id', keep='first')
+    
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_wvc = df_wvc.rename(columns=lambda x: x.lower())
+    
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_wvc) // 100
+    df_wvc = df_wvc.iloc[:new_length] """
+    
     return df_wvc
-
 
 
 def data_processing_glassdoor_wwfu_val_photos_csv():
@@ -289,9 +361,18 @@ def data_processing_glassdoor_wwfu_val_photos_csv():
     df_wvp = pd.read_csv("glassdoor_dataset/glassdoor_wwfu_val_photos.csv")
     
     df_wvp = replace_dots(df_wvp)
+    
+    df_wvp = df_wvp.drop_duplicates(subset='id', keep='first')
+
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_wvp = df_wvp.rename(columns=lambda x: x.lower())
+
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_wvp) // 100
+    df_wvp = df_wvp.iloc[:new_length] """
 
     return df_wvp
-
 
 
 def data_processing_glassdoor_wwfu_val_videos_csv():
@@ -299,6 +380,17 @@ def data_processing_glassdoor_wwfu_val_videos_csv():
     df_wvv = pd.read_csv("glassdoor_dataset/glassdoor_wwfu_val_videos.csv")
     
     df_wvv = replace_dots(df_wvv)
+    
+    # Certain id duplicates would cause errors when uploading
+    df_wvv = df_wvv.drop_duplicates(subset='id', keep='first')
+    
+    # Discrepancies between the use of camelCase for some df columns names and PostgreSQL autoconverting all of 
+    # them to lowercase automatically would cause errors when uploading, so we convert everything to lowercase.
+    df_wvv = df_wvv.rename(columns=lambda x: x.lower())
+    
+    """ #FIME: DEBUGGING LENGTH CUT
+    new_length = len(df_wvv) // 100
+    df_wvv = df_wvv.iloc[:new_length] """
     
     return df_wvv
 
