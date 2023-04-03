@@ -1,3 +1,13 @@
+""" The main script execute, with an empty database, as follow  :
+    - Configure logging
+    - Data processing of the selected csv files (cleaning, validation)
+    - Connect to the GCP Cloud SQL PostgreSQL database
+    - Create the database schema with tables, data constraints, with saved SQL queries
+    - Upload data inside each table
+    - Query some data to verify that it has been properly inserted
+    - Close the connection
+"""
+
 import logging
 import pandas as pd
 from csv_files_data_processing import (
