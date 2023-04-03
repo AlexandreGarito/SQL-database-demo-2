@@ -1,3 +1,7 @@
+""" This module stores all the data processing functions for each selected csv file of the dataset, as well some 
+utility functions.
+"""
+
 import pandas as pd
 import numpy as np
 import re
@@ -161,6 +165,7 @@ def data_processing_glassdoor_csv():
 
 
 def data_processing_glassdoor_overview_competitors_csv():
+    """Clean and validate the glassdoor_overview_competitors.csv file."""
     
     df_oc = pd.read_csv("glassdoor_dataset/glassdoor_overview_competitors.csv")
 
@@ -180,6 +185,7 @@ def data_processing_glassdoor_overview_competitors_csv():
 
 
 def data_processing_glassdoor_benefits_comments_csv():
+    """Clean and validate the glassdoor_benefits_comments.csv file."""
 
     df_bc = pd.read_csv("glassdoor_dataset/glassdoor_benefits_comments.csv")
 
@@ -208,6 +214,7 @@ def data_processing_glassdoor_benefits_comments_csv():
 
 
 def data_processing_glassdoor_benefits_highlights_csv():
+    """Clean and validate the glassdoor_benefits_highlights.csv file."""
 
     df_bh = pd.read_csv("glassdoor_dataset/glassdoor_benefits_highlights.csv")
 
@@ -235,6 +242,7 @@ def data_processing_glassdoor_benefits_highlights_csv():
 
 
 def data_processing_glassdoor_reviews_csv():
+    """Clean and validate the glassdoor_reviews.csv file."""
 
     df_r = pd.read_csv("glassdoor_dataset/glassdoor_reviews.csv")
 
@@ -278,6 +286,7 @@ def data_processing_glassdoor_reviews_csv():
 
 
 def data_processing_glassdoor_salary_salaries_csv():
+    """Clean and validate the glassdoor_salary_salaries.csv file."""
 
     df_ss = pd.read_csv("glassdoor_dataset/glassdoor_salary_salaries.csv")
 
@@ -305,6 +314,7 @@ def data_processing_glassdoor_salary_salaries_csv():
 
 
 def data_processing_glassdoor_wwfu_csv():
+    """Clean and validate the glassdoor_wwfu.csv file."""
 
     df_w = pd.read_csv("glassdoor_dataset/glassdoor_wwfu.csv")
 
@@ -338,6 +348,7 @@ def data_processing_glassdoor_wwfu_csv():
 
 
 def data_processing_glassdoor_wwfu_val_captions_csv():
+    """Clean and validate the glassdoor_wwfu_val_captions.csv file."""
 
     df_wvc = pd.read_csv("glassdoor_dataset/glassdoor_wwfu_val_captions.csv")
     
@@ -357,6 +368,7 @@ def data_processing_glassdoor_wwfu_val_captions_csv():
 
 
 def data_processing_glassdoor_wwfu_val_photos_csv():
+    """Clean and validate the glassdoor_wwfu_val_photos.csv file."""
 
     df_wvp = pd.read_csv("glassdoor_dataset/glassdoor_wwfu_val_photos.csv")
     
@@ -376,6 +388,7 @@ def data_processing_glassdoor_wwfu_val_photos_csv():
 
 
 def data_processing_glassdoor_wwfu_val_videos_csv():
+    """Clean and validate the glassdoor_wwfu_val_videos.csv file."""    
 
     df_wvv = pd.read_csv("glassdoor_dataset/glassdoor_wwfu_val_videos.csv")
     
