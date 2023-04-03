@@ -49,47 +49,41 @@ def data_processing_glassdoor_csv():
     filtered_df_glassdoor = df_glassdoor.loc[
         :,
         [
-            "gaTrackerData_jobTitle",
-            "gaTrackerData_location",
-            "gaTrackerData_locationType",
-            "gaTrackerData_sector",
-            "header_easyApply",
-            "header_employerName",
-            "header_jobTitle",
-            "header_location",  # Location City (most of times)
+            "header_easyApply", # Presence of Easy Apply button on job posting
+            "header_employerName", # Company's name
+            "header_jobTitle", # Job posting title
             "header_posted",  # Date job was posted
             "header_rating",  # Company rating by employees
             "header_urgencyLabel",  # Misleading column name, it actually indicates the presence of the "2019 Glassdoor Best Place to Work" award on the job posting
-            "header_payHigh",
-            "header_payMed",
-            "header_payLow",
-            "job_description",
-            "job_jobSource",
+            "header_payHigh", # Payment at 90th percentile
+            "header_payMed", # Payment at 50th percentile
+            "header_payLow", # Payment at 10th percentile
+            "job_description", # Job description (html)
+            "job_jobSource", # Original website origin of job posting
             "map_country",  # do something with country_names_2_digit_codes
-            "map_employerName",
-            "map_lat",  # 0 for NaN
-            "map_lng",  # 0 for NaN
-            "map_location",
-            "overview_foundedYear",  # 0 for NaN
-            "overview_hq",
-            "overview_industry",
-            "overview_revenue",
-            "overview_sector",
-            "overview_size",
-            "overview_stock",
-            "overview_type",
-            "overview_description",
-            "overview_mission",
-            "overview_competitors",  # foreign key
-            "rating_ceo_name",
-            "rating_ceoApproval",  # <0 or NaN for missing data
-            "rating_recommendToFriend",  # <0 or NaN for missing data
-            "rating_starRating",
-            "benefits_comments",  # foreign key
-            "benefits_highlights",  # foreign key
-            "reviews",  # foreign key
-            "salary_salaries",  # foreign key
-            "wwfu",  # foreign key
+            "map_lat",  # Geographical latitude of job posting, 0 for NaN
+            "map_lng",  # Geographical longitude of job posting, 0 for NaN
+            "map_location", # Location of job posting (variable, city or country), can be different from the company's headquarters
+            "overview_foundedYear",  # Year of company's foundation, 0 for NaN
+            "overview_hq", # Company's headquarters location
+            "overview_industry", # Company's industry, sub-sector
+            "overview_revenue", # Company's revenue
+            "overview_sector", # Company's sector
+            "overview_size", # Company's number of employees bracket
+            "overview_stock", # Company's stock
+            "overview_type", # Public or private company
+            "overview_description", # Company's description
+            "overview_mission", # Company's mission
+            "overview_competitors",  # id for company's competitor, foreign key to glassdoor_overview_competitors
+            "rating_ceo_name", # Company's CEO Name
+            "rating_ceoApproval",  # Company's CEO approval rating, <0 or NaN for missing data
+            "rating_recommendToFriend",  # Rating from employees for recommendations to friends, <0 or NaN for missing data
+            "rating_starRating", # Rating of company from glassdoor users
+            "benefits_comments",  # Comments about company's benefits, foreign key to glassdoor_benefits_comments
+            "benefits_highlights",  # Highlighted comments & data about company's benefits, foreign key to glassdoor_benefits_highlights
+            "reviews",  # Reviews from glassdoor users, foreign key to glassdoor_reviews
+            "salary_salaries",  # Data about salaries reported by employees, foreign key to glassdoor_salary_salaries
+            "wwfu",  # Data related to company's mission, foreign key to glassdoor_wwfu
         ],
     ]
 

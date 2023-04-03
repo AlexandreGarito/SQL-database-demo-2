@@ -8,14 +8,9 @@
 create_table_glassdoor = '''
     CREATE TABLE glassdoor (
         id SERIAL PRIMARY KEY,
-        gaTrackerdata_jobtitle VARCHAR,
-        gaTrackerdata_location VARCHAR,
-        gaTrackerdata_locationtype VARCHAR,
-        gaTrackerdata_sector VARCHAR,
         header_easyapply BOOLEAN,
         header_employername VARCHAR,
         header_jobtitle VARCHAR,
-        header_location VARCHAR,
         header_posted VARCHAR,
         header_rating FLOAT,
         header_urgencylabel VARCHAR,
@@ -25,7 +20,6 @@ create_table_glassdoor = '''
         job_description VARCHAR,
         job_jobsource VARCHAR,
         map_country VARCHAR,
-        map_employername VARCHAR,
         map_lat FLOAT,
         map_lng FLOAT,
         map_location VARCHAR,
