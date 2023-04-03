@@ -11,7 +11,7 @@ Goals achieved with this project :
 
   ✅ Cleaning & validating a rather large (1.5GB) and dirty (webscraped) dataset with pandas  
   ✅ Database schema creation with SQL (11 tables)  
-  ✅ Managing a complex data upload (a lot of foreign keys and data types intricacies) to a PostgreSQL database hosted in GCP  
+  ✅ Managing a complex data upload to a PostgreSQL database hosted in GCP  
   ⬜ SQL based analysis with GCP BigQuery  
   ⬜ Vizualisation with GCP Data Studio  
   
