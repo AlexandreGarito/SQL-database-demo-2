@@ -10,13 +10,13 @@ The dataset, consisting of 15 CSV files with 160,000 records and approximately 1
 My approach involved taking this rather dirty dataset, cleaning and validating it with Python, and then creating a PostgreSQL database in GCP Cloud SQL with an appropriate schema to import the data. I then used SQL queries inside BigQuery to derive insights from the data, which I visualized using GCP Looker (formerly Data Studio).  
 <br>
 
-Objectives achieved with this project :  
+Tools & skills in this project :
 
   ✅ Clean and validate a large (1.5GB) and dirty (web-scraped) dataset using Python pandas  
   ✅ Design and create a multi-dimensional database schema using SQL  
   ✅ Manage compatibility issues involved in the data upload to a PostgreSQL database hosted on GCP  
   ✅ Perform SQL-based querying and gain insights using GCP BigQuery  
-  ✅ Visualize data using GCP Looker (formerly Data Studio)  
+  ✅ Visualize data using GCP Looker (formerly Data Studio) : https://lookerstudio.google.com/reporting/127231ff-fc3c-464a-a6b5-28d075df9672
   
 <br>
 
