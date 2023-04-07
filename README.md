@@ -3,16 +3,16 @@
 <br>
 
 ### Project summary:  
-My objectives for this project were to develop my skills in setting up and interacting with an SQL database, data cleaning, validation, and visualization. To achieve these goals, I utilized a Kaggle dataset containing a 2019 web-scraped collection of Glassdoor job listings for data-related positions: https://www.kaggle.com/datasets/andresionek/data-jobs-listings-glassdoor
+My objectives for this project were to develop my skills in setting up and interacting with an SQL database, as well as practicing data cleaning, validation, and visualization. To achieve these goals, I utilized a Kaggle dataset containing a 2019 web-scraped collection of Glassdoor job listings for data-related positions: https://www.kaggle.com/datasets/andresionek/data-jobs-listings-glassdoor
 
-The dataset, consisting of 15 CSV files with 160,000 records and approximately 1.47 GB of data, presented challenges such as inconsistencies, missing or invalid entries, and duplicate data, typical of web-scraped datasets. The main CSV file alone comprises 160 columns and is around 900 MB in size.
+The dataset, consisting of 15 CSV files with 160,000 records and approximately 1.47 GB of data, contains numerous inconsistencies, missing or invalid entries, and duplicate data, typical of web-scraped datasets. The main CSV file alone has 163 columns and is around 900 MB in size.
 
-My approach involved taking this rather dirty dataset, cleaning and validating it with Python, and then creating a PostgreSQL database in GCP Cloud SQL with a suitable schema to accommodate the imported data and maintain data integrity. Lastly, I leveraged BigQuery to derive analysis and insights, which I subsequently visualized using GCP Looker (formerly Data Studio).  
+My approach involved taking this rather dirty dataset, cleaning and validating it with Python, and then creating a PostgreSQL database in GCP Cloud SQL with an appropriate schema to import the data. I then used SQL queries inside BigQuery to derive insights from the data, which I visualized using GCP Looker (formerly Data Studio).  
 <br>
 
-Goals achieved with this project :  
+Objectives achieved with this project :  
 
-  ✅ Clean and validate a large (1.5GB) and messy (web-scraped) dataset using Python pandas  
+  ✅ Clean and validate a large (1.5GB) and dirty (web-scraped) dataset using Python pandas  
   ✅ Design and create a multi-dimensional database schema using SQL  
   ✅ Manage compatibility issues involved in the data upload to a PostgreSQL database hosted on GCP  
   ✅ Perform SQL-based querying and gain insights using GCP BigQuery  
