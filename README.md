@@ -1,4 +1,4 @@
-# SQL Database Setup and Analysis of a Glassdoor Job Listings Dataset:
+# SQL Database Setup and Analysis of a Glassdoor Job Listings Dataset
 
 <br>
 
