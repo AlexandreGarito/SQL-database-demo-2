@@ -1,11 +1,11 @@
-""" The main script execute, with an empty database, as follow  :
-    - Configure logging
-    - Data processing of the selected csv files (cleaning, validation)
-    - Connect to the GCP Cloud SQL PostgreSQL database
-    - Create the database schema with tables, data constraints, with saved SQL queries
-    - Upload data inside each table
-    - Query some data to verify that it has been properly inserted
-    - Close the connection
+""" The main script performs the following steps with an empty database:
+- Configure logging settings
+- Process selected CSV files by cleaning and validating the data
+- Establish a connection to the GCP Cloud SQL PostgreSQL database
+- Create the database schema, including tables and data constraints, using a "SQL heavy" approach with stored SQL queries (instead of the more Pythonic SQLAlchemy API)
+- Upload data into each table
+- Execute sample queries to verify the proper insertion of data
+- Close the database connection
 """
 
 import logging
