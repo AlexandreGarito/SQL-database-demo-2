@@ -8,6 +8,9 @@ My objectives for this project were to develop my skills in setting up and inter
 The dataset, consisting of 15 CSV files with 160,000 records and approximately 1.47 GB of data, contains numerous inconsistencies, missing or invalid entries, and duplicate data, typical of web-scraped datasets. The main CSV file alone has 163 columns and is around 900 MB in size.
 
 My approach involved taking this rather dirty dataset, cleaning and validating it with Python, and then creating a PostgreSQL database in GCP Cloud SQL with an appropriate schema to import the data. I then used SQL queries inside BigQuery to derive insights from the data, which I visualized using GCP Looker (formerly Data Studio).  
+
+Looker dashboard link : https://lookerstudio.google.com/reporting/127231ff-fc3c-464a-a6b5-28d075df9672
+
 <br>
 
 Tools & skills in this project :
@@ -16,7 +19,7 @@ Tools & skills in this project :
   ✅ Design and create a multi-dimensional database schema using SQL  
   ✅ Manage compatibility issues involved in the data upload to a PostgreSQL database hosted on GCP  
   ✅ Perform SQL-based querying and gain insights using GCP BigQuery  
-  ✅ Visualize data using GCP Looker (formerly Data Studio) : https://lookerstudio.google.com/reporting/127231ff-fc3c-464a-a6b5-28d075df9672
+  ✅ Visualize data using GCP Looker (formerly Data Studio)
   
 <br>
 
