@@ -3,7 +3,7 @@
 <br>
 
 ### Project summary:  
-My objectives for this project were to develop my skills in setting up and interacting with an SQL database, as well as practicing data cleaning, validation, and visualization. To achieve these goals, I utilized a Kaggle dataset containing a 2019 web-scraped collection of Glassdoor job listings for data-related positions: https://www.kaggle.com/datasets/andresionek/data-jobs-listings-glassdoor
+My objectives for this project were to develop my skills in setting up and interacting with an SQL database, as well as practicing data cleaning, validation, and visualization. For this, I used a Kaggle dataset containing a 2019 web-scraped collection of Glassdoor job listings for data-related positions: https://www.kaggle.com/datasets/andresionek/data-jobs-listings-glassdoor
 
 The dataset, consisting of 15 CSV files with 160,000 records and approximately 1.47 GB of data, contains numerous inconsistencies, missing or invalid entries, and duplicate data, typical of web-scraped datasets. The main CSV file alone has 163 columns and is around 900 MB in size.
 
