@@ -14,6 +14,18 @@ My approach involved taking this rather dirty dataset, cleaning and validating i
 
 Looker dashboard link : https://lookerstudio.google.com/reporting/127231ff-fc3c-464a-a6b5-28d075df9672
 
+
+<br>
+
+<p align="center">
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker1.PNG" width="24.5%" />
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker2.PNG" width="24.5%" />
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker3.PNG" width="24.5%" />
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker4.PNG" width="24.5%" />
+</p>
+
+
+
 <br>
 
 Tools & skills in this project :
