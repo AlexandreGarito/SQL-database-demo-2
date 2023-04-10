@@ -2,6 +2,9 @@
 
 <br>
 
+![illustration pipeline](https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/illustration%20pipeline%20demo-2.png))
+
+
 ### Project summary:  
 My objectives for this project were to develop my skills in setting up and interacting with an SQL database, as well as practicing data cleaning, validation, and visualization. For this, I used a Kaggle dataset containing a 2019 web-scraped collection of Glassdoor job listings for data-related positions: https://www.kaggle.com/datasets/andresionek/data-jobs-listings-glassdoor
 
