@@ -31,9 +31,13 @@ Looker dashboard link : https://lookerstudio.google.com/reporting/127231ff-fc3c-
 Tools & skills in this project :
 
   ✅ Clean and validate a large (1.5GB) and dirty (web-scraped) dataset using Python pandas  
+  
   ✅ Design and create a multi-dimensional database schema using SQL  
+  
   ✅ Manage compatibility issues involved in the data upload to a PostgreSQL database hosted on GCP  
+  
   ✅ Perform SQL-based querying and gain insights using GCP BigQuery  
+  
   ✅ Visualize data using GCP Looker (formerly Data Studio)
   
 <br>
