@@ -2,7 +2,7 @@
 
 <br>
 
-![illustration pipeline](https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/illustration%20pipeline%20demo-2.png))
+![illustration pipeline](https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/illustration%20pipeline%20demo-2.png)
 
 
 ### Project summary:  
