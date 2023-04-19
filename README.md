@@ -14,14 +14,30 @@ My approach involved taking this rather dirty dataset, cleaning and validating i
 
 Looker dashboard link : https://lookerstudio.google.com/reporting/127231ff-fc3c-464a-a6b5-28d075df9672
 
+
+<br>
+
+<p align="center">
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker1.PNG" width="24.5%" />
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker2.PNG" width="24.5%" />
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker3.PNG" width="24.5%" />
+  <img src="https://github.com/AlexandreGarito/SQL-database-demo-2/blob/main/images/looker4.PNG" width="24.5%" />
+</p>
+
+
+
 <br>
 
 Tools & skills in this project :
 
   ✅ Clean and validate a large (1.5GB) and dirty (web-scraped) dataset using Python pandas  
+  
   ✅ Design and create a multi-dimensional database schema using SQL  
+  
   ✅ Manage compatibility issues involved in the data upload to a PostgreSQL database hosted on GCP  
+  
   ✅ Perform SQL-based querying and gain insights using GCP BigQuery  
+  
   ✅ Visualize data using GCP Looker (formerly Data Studio)
   
 <br>
